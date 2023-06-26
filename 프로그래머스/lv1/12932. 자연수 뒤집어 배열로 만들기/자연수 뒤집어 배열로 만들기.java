@@ -9,7 +9,7 @@ class Solution {
         sb.reverse();
 
         for (int i=0; i<sb.length(); i++) {
-            answer.add(Integer.valueOf(String.valueOf(sb.charAt(i))));    
+            answer.add(sb.charAt(i) - 48);   
         }
         
         return answer;
