@@ -1,27 +1,17 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int solution(int[][] targets) {
+        Arrays.sort(targets, Comparator.comparingInt(o -> o[1]));
+
         int answer = 0;
-
-        Arrays.sort(targets, (o1, o2) -> { return o1[1]-o2[1]; });
-
-        int l = -1;
-        for (int[] target : targets) {
-            if (l == -1) {
-                l = target[1] - 1;
+        int rocket = 0;
+        for(int[] target : targets) {
+            if(rocket < target[0] + 1) {
+                rocket = target[1];
                 answer++;
-                continue;
             }
-
-            if (l >= target[0] && l <= target[1]) {
-                continue;
-            }
-
-            l = target[1] - 1;
-            answer++;
         }
-
         return answer;
     }
 }
