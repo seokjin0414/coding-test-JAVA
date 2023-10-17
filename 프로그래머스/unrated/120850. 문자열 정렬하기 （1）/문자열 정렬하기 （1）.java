@@ -6,7 +6,7 @@ class Solution {
         List<Integer> list = new ArrayList<>();
 
         for (char c : my_string.toCharArray()) {
-            if (90 > c) {
+            if (58 > c) {
                 list.add(c - 48);
             }
         }
