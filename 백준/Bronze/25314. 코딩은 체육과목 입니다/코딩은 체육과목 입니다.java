@@ -3,18 +3,16 @@ import java.io.*;
 class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); 
-        String l = "long ";
-        String i = "int";
+        StringBuffer sb = new StringBuffer();
         int n = Integer.parseInt(br.readLine()) / 4;
-        
+
         while (n > 0) {
-            bw.write(l);
+            sb.append("long ");
             n--;
         }
-        bw.write(i);
-        bw.flush();
+        sb.append("int");
+
+        System.out.println(sb);
         br.close();
-        bw.close();
     }
 }
