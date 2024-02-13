@@ -1,17 +1,16 @@
-use std::io;
 use std::fmt::Write;
-use std::error::Error;
 
-fn main () -> Result<(), Box<dyn Error>> {
-    let mut n = String::new();
-    io::stdin().read_line(&mut n)?;
-    let n = n.split_ascii_whitespace().next().unwrap().parse::<usize>().unwrap();
-    let mut r = String::new();
-    
-    for i in 1..=n {
-        writeln!(r, "{}", "*".repeat(i))?;
+fn main() {
+    let mut bf: String = String::new();
+    let mut r: String = String::new();
+
+    bf.clear();
+    std::io::stdin().read_line(&mut bf).unwrap();
+    let n: usize = bf.trim_end().parse().unwrap();
+
+    for i in 0..n {
+        writeln!(&mut r, "{}", "*".repeat(i + 1)).unwrap();
     }
-    
-    println!("{r}");
-    Ok(())
+
+    print!("{}", r);
 }
