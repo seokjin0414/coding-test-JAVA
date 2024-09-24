@@ -1,17 +1,17 @@
-WITH f AS (
+WITH p AS (
     SELECT CODE 
     FROM SKILLCODES
-    WHERE CATEGORY = "Front End"
+    WHERE NAME = "Python"
 ),
 c AS (
     SELECT CODE 
     FROM SKILLCODES
     WHERE NAME = "C#"
 ),
-p AS (
+f AS (
     SELECT CODE 
     FROM SKILLCODES
-    WHERE NAME = "Python"
+    WHERE CATEGORY = "Front End"
 ),
 g AS (
     SELECT ID, EMAIL,
@@ -24,4 +24,4 @@ g AS (
 SELECT GRADE, ID, EMAIL
 FROM g 
 WHERE GRADE IS NOT NULL
-ORDER BY 1, 2
+ORDER BY 1, 2;
